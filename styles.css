@@ -1,0 +1,168 @@
+/* Base Styles - Ignore if you fancy */
+
+body {
+	background: #ececec;
+	font-size: 62.5%;
+	font-family: Georgia, Times, serif;
+}
+
+.container {
+	display: block;
+	width: 780px;
+	margin: 80px auto;
+	padding: 20px;
+	background: #424242;
+	color: #fff;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.container p {
+	font-size: 1.4em;
+}
+
+
+
+/* Micro Clearfix - Courtesy of Nicolas Gallagher - http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+
+a:link, a:visited {
+	color: #bada55;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+}
+
+/* ----- END IGNORING HERE ----- */
+
+
+/* Let's setup the Nav */
+
+nav {
+	display: block;
+	width: 800px;
+	margin: 40px auto 0 auto;
+	padding: 10px 10px;
+	font-size: 1.8em;
+	background: #424242;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	float: left;
+	margin-right: 40px;
+	position: relative; /* POSITION RELATIVE REQUIRED, so Absolute below works */
+	line-height: 2em;
+}
+
+/* Cool our sexy Nav Styles are done */
+
+
+/* This is the padding for the Carrot - knock it a few px to the right for best user experience, so they don't accidentally tap the link in the top of the dropdown */
+
+.carrot {
+	width: 20px;
+	height: auto;
+	padding-left: 5px;
+	vertical-align: text-top;
+}
+
+/* Let's Hide the Select Menu from our Desktop/Large Screens */
+
+nav select {
+	display: none;
+	visibility: hidden;
+}
+
+
+/* Let's sort out the submenus and hide them till we're ready */
+
+nav ul li ul {
+	position: absolute;
+	left: -9999px;
+	z-index: 20;
+}
+
+
+/* Let's call that sexy sub menu in when hovering over it's parent List Item */
+
+nav ul li:hover ul {
+	background: #bada55;
+	left: 0;
+}
+
+/* Let's make our submenu list items nice with some padding */
+
+nav ul li ul li {
+	display: block;
+	margin: 0;
+	padding: 5px;
+}
+
+
+/* Just shaking up the link styling, nothing to see here comrade! */
+
+nav ul li ul li a {
+	color: #424242 !important;
+}
+
+
+
+/* Let's sort out our media query for our smaller screen users */
+
+@media (max-width: 767px) {
+
+	/* Center the Nav so it looks awesomer */
+
+	nav {
+		width: 95%;
+		margin: 25px auto;
+		padding: 15px 0;
+	}
+
+	/* Let's hide the boring Nav */
+
+	nav ul {
+		display: none; 
+		visibility: hidden;
+	}
+
+	/* Now let's show off our sexy select drop down */
+
+	nav select {
+		display: block;
+		width: 200px;
+		visibility: visible;
+		margin: 0 auto;
+	}
+
+	.container {
+		width: 90%;
+		margin: 40px auto;
+		padding: 2%;
+	}
+
+}
